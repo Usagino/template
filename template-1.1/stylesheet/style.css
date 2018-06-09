@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "basictitlefont";
+  src: url("material/basictitlefont.ttf");
+}
+
+@font-face {
+  font-family: "Wingdings2";
+  src: url("material/Wingdings2.ttf");
+}
+
+@font-face {
+  font-family: "Nagomi";
+  src: url("material/Nagomi.ttf");
+}

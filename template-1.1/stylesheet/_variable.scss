@@ -1,0 +1,367 @@
+$white: #ffffff;
+$gray: #d6d6d6;
+$black: #303030;
+$twitter: #55acee;
+$instagram: #D93177;
+$youtube: #cd201f;
+$hover_color: #6e6e6e;
+$link_color: $black;
+@mixin font_big {
+  font-size: 30px;
+}
+@mixin font_medium {
+  font-size: 25px;
+}
+@mixin font_small {
+  font-size: 15px;
+}
+@mixin link_color {
+  color: $link_color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: $hover_color;
+  }
+}
+@mixin tran_anime {
+  -webkit-transition: opacity 0.7s ease-out;
+  transition: opacity 0.7s ease-out;
+}
+@mixin title($font_name) {
+  h1 {
+    font-family: '#{$font_name}';
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+@mixin font($font_name,$font_url) {
+  font-family: '#{$font_name}';
+  src: url("material/#{$font_url}.ttf");
+}
+@font-face {
+  @include font(basictitlefont,basictitlefont);
+}
+@font-face {
+  @include font(Wingdings2,Wingdings2);
+}
+@font-face {
+  @include font(Nagomi,Nagomi);
+}
+@mixin box_all($max-width) {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $max-width;
+}
+$box_all_smartphone: 300px;
+$box_all_tablet: 600px;
+$box_all_desktop: 1000px;
+// cssgridLayout
+@mixin grid($columns,$rows,$gap) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: $columns;
+      grid-template-columns: $columns;
+  -ms-grid-rows: $rows;
+      grid-template-rows: $rows;
+  grid-gap: $gap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@mixin more_btn($color,$width,$height) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  color: $white;
+  @include font_big
+}
+@mixin wave($bgcolor:$white) {
+  width: 100%;
+  height: 200px;
+  background-color: $bgcolor;
+
+  canvas {
+    bottom: -1px !important;
+  }
+}
+$divcount: 7;
+$layer: 10;
+@mixin ham_icon {
+  position: absolute;
+  height: 1px;
+  /*線の太さ*/
+  width: 30px;
+  /*長さ*/
+  background: rgb(15, 15, 15);
+  display: block;
+  content: '';
+}
+//
+@mixin fadeOut_nav {
+  @-webkit-keyframes fadeOut_nav {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fadeOut_nav {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}
+@mixin fadein_nav {
+  -webkit-animation: fadein_nav 3s ease-in-out 0s 1 forwards;
+  animation: fadein_nav 3s ease-in-out 0s 1 forwards;
+  opacity: 0;
+  @-webkit-keyframes fadein_nav {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadein_nav {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+@mixin LR_line {
+  a {
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: white;
+      -webkit-transform: scale(0, 1);
+      transform: scale(0, 1);
+      -webkit-transform-origin: left top;
+      transform-origin: left top;
+      -webkit-transition: -webkit-transform 0.3s;
+      transition: -webkit-transform 0.3s;
+      transition: transform 0.3s;
+      transition: transform 0.3s, -webkit-transform 0.3s;
+    }
+
+    &:hover::after {
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+  }
+}
+@mixin navfadein($divcount) {
+  animation: navfadeIn 0.6s ease-in-out #{$divcount * 0.2}s 1 forwards;
+  @-webkit-keyframes navfadeIn {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    1% {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes navfadeIn {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    1% {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+@mixin belt_fadein {
+  @-webkit-keyframes fadeIn_nav {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+      background-color: rgb(15, 15, 15);
+    }
+  }
+  @keyframes fadeIn_nav {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+      background-color: rgb(15, 15, 15);
+    }
+  }
+}
+@mixin navdraw {
+  #nav-drawer {
+    padding: 10px;
+    /*チェックボックス等は非表示に*/
+    .nav-unshown {
+      display: none;
+    }
+
+    a {
+      font-family: "basictitlefont";
+    }
+    /*アイコンのスペース*/
+    #nav-open {
+      svg {
+        fill: white;
+        opacity: 0;
+      }
+      position: fixed;
+      z-index: #{$layer + 2};
+      top: 30px;
+      left: 30px;
+      cursor: pointer;
+
+      span,
+      span:after,
+      span:before {
+        /*ハンバーガーアイコンをCSSだけで表現*/
+        @include ham_icon;
+        opacity: 1;
+      }
+
+      span:before {
+        bottom: -15px;
+      }
+
+      span:after {
+        bottom: -30px;
+      }
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    #nav-input:checked {
+      & ~ #nav-open span {
+        -webkit-animation: fadeOut_nav 0.2s ease-in-out 0s 1 forwards;
+        animation: fadeOut_nav 0.2s ease-in-out 0s 1 forwards;
+      }
+
+      & ~ #nav-open svg {
+        opacity: 1;
+      }
+
+      & ~ #navwrap {
+        display: inline-block;
+        @include navfadein($divcount);
+      }
+
+      & ~ #navanime {
+        display: inline-block;
+      }
+      @for $i from 1 through $divcount {
+        & ~ #navanime .belt_#{$i} {
+          $delay: $i * 0.2;
+          animation: fadeIn_nav 1s ease-in-out #{$delay}s 1 forwards;
+        }
+      }
+    }
+    //
+    position: relative;
+
+    #navanime,
+    #navwrap {
+      position: fixed;
+      display: inline-block;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    #navwrap {
+      display: none;
+
+      a {
+        font-size: 30px;
+        padding-top: 1rem;
+        margin: 1rem;
+        padding: 0.1rem;
+        color: white;
+        text-align: left;
+        letter-spacing: 0.2em;
+      }
+      @include LR_line;
+      opacity: none;
+      z-index: #{$layer + 1};
+      width: 10rem;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      -webkit-transform: translateY(-50%) translateX(-50%);
+      transform: translateY(-50%) translateX(-50%);
+    }
+
+    #navanime {
+      display: none;
+      z-index: #{$layer};
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      div {
+        height: calc(100vh / #{$divcount});
+        background-color: rgb(59, 59, 59);
+        width: 0;
+      }
+    }
+    @include belt_fadein;
+    @include fadeOut_nav;
+  }
+}
+$smartphone: "only screen and (min-width : 320px) and (max-width : 480px)";
+$tablet: "only screen (min-width : 480px) and (max-width : 1024px)";
