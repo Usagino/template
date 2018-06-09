@@ -29,13 +29,15 @@ $ git commit -m "任意のメッセージ"
 ```
 
 ```$ git remote add remote(リモート名) http://(リモートのURL)```
+
 これでリモートを繋げる。
+
 ```$ git push origin master```
+
 リモートにファイルをアップロード
+
 ```$ git pull origin master```
+
 リモートからファイルをダウンロード
-
-
-
 
 ---
