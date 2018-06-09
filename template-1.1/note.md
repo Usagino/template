@@ -13,3 +13,27 @@ coffee script/script.coffee -c
 
 
 ---
+#### 2018/06/10
+git使い方
+はじめに指定のファイルのまで移動し```$ git init```コマンドを使う
+次に共有するファイルを選択する。
+
+```
+$ git add index.html
+```
+コミットするメッセージを追加(わかりやすいメッセージで)
+```
+$ git commit -m "任意のメッセージ"
+```
+
+```$ git remote add remote(リモート名) http://(リモートのURL)```
+これでリモートを繋げる。
+```$ git push origin master```
+リモートにファイルをアップロード
+```$ git pull origin master```
+リモートからファイルをダウンロード
+
+
+
+
+---
