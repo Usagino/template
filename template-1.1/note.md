@@ -20,13 +20,12 @@ coffee script/script.coffee -c
 
 次に共有するファイルを選択する。
 
-```
-$ git add index.html
-```
+```$ git add index.html```
+
+次に、
+```$ git commit -m "任意のメッセージ```
 コミットするメッセージを追加(わかりやすいメッセージで)
-```
-$ git commit -m "任意のメッセージ"
-```
+
 
 ```$ git remote add remote(リモート名) http://(リモートのURL)```
 
