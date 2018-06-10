@@ -43,7 +43,7 @@ coffee script/script.coffee -c
 ---
 #### 2018/06/10
 ***用語集***
-ステージする -> git add のこと
+ステージする -> ```git add``` のこと
 
 
 
