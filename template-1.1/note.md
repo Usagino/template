@@ -45,7 +45,14 @@ coffee script/script.coffee -c
 ***用語集***
 ステージする -> ```git add``` のこと
 
+***pugの画像を繰り返し処理***
 
+```pug
+each val in [1, 2, 3, 4, 5]
+  div= val
+  img(src="material/issue_"+val+".png")
+```
+とすることで画像を繰り返し処理で挿入可能
 
 
 
