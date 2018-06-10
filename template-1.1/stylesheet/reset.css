@@ -13,6 +13,7 @@ body {
   font-family: Arial, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
   font-size: 16px;
   position: relative;
+  overflow-x: hidden;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
