@@ -30,31 +30,7 @@ $link_color: $black;
     color: $hover_color;
   }
 }
-@mixin tran_anime {
-  -webkit-transition: opacity 0.7s ease-out;
-  transition: opacity 0.7s ease-out;
-}
-@mixin title($font_name) {
-  h1 {
-    font-family: '#{$font_name}';
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
-}
-@mixin font($font_name,$font_url) {
-  font-family: '#{$font_name}';
-  src: url("material/#{$font_url}.ttf");
-}
-@font-face {
-  @include font(basictitlefont,basictitlefont);
-}
-@font-face {
-  @include font(Wingdings2,Wingdings2);
-}
-@font-face {
-  @include font(Nagomi,Nagomi);
-}
+
 @mixin box_all($max-width) {
   margin: 0 auto;
   width: 100%;
